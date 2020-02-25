@@ -1,8 +1,20 @@
-import React from 'react';
+import React, {useEffect, useContext} from 'react';
 import {Link} from 'react-router-dom';
+import {questions} from './constants/questions';
+import {Store} from './store';
+import {SET_QUESTIONS} from './constants/actions';
 import './App.scss';
 
 function App() {
+  const {state, dispatch} = useContext(Store);
+  useEffect(() => {
+    /*console.log(questions)
+    console.log(state)*/
+    dispatch({
+      type: SET_QUESTIONS,
+      payload: questions.slice(0,3)
+    })
+  }, []);
   return (
     <div className="index">
       <h2>JavaScript Questions</h2> 

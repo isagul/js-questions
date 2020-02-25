@@ -1,5 +1,5 @@
 import React, {createContext, useReducer} from 'react';
-
+import {SET_QUESTIONS, SET_USER_ANSWER} from './constants/actions'
 export const Store = createContext();
 
 const initialState = {
@@ -8,10 +8,21 @@ const initialState = {
 };
 
 function reducer(state, action) {
-  /*let updatedState;
-  let index;*/
+  let updatedState;
+  //let index;
 
   switch (action.type) {
+    case SET_QUESTIONS:
+      return {...state, currentQuestions: [...action.payload]};
+    case SET_USER_ANSWER:
+      let updatedState = [...state.userAnswers];
+      let idx = updatedState.findIndex(item => item.question.id === action.payload.question.id);
+      if (idx === -1) {
+        updatedState.push(action.payload)
+      } else {
+        updatedState[idx] = action.payload;
+      }
+      return {...state, userAnswers: updatedState };
     default:
       return state;
   }

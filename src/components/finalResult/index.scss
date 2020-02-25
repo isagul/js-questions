@@ -1,0 +1,52 @@
+@mixin result-buttons($marginTop, $marginBottom) {
+    align-self: center;
+    padding: 8px 12px;
+    background: #ed5f1f;
+    border: none;
+    border-radius: 3px;
+    color: white;
+    cursor: pointer;
+    width:115px;
+    margin-top: $marginTop;
+    margin-bottom: $marginBottom;
+}
+
+.final-result-screen {
+    display: flex;
+    flex-direction: column;
+    width: 350px;
+    padding: 8px;
+    border:1px solid lightgray;
+    box-shadow: 1px 1px 10px 2px lightgrey;
+    font-weight: 600;
+    .title {
+        text-align: center;
+    }
+    .result-area {
+        display: flex;
+        justify-content: space-between;
+        .correct-field {
+            color:#019500;
+        }
+        .wrong-field {
+            color:red;
+        }
+    }
+    .percentage-area {
+        text-align: center;
+        .percentage-field {
+            color: #ed5f1f;
+        }
+    }
+    .retry-quiz{
+        @include result-buttons(2rem, 10px);
+    }
+    .or {
+        align-self: center;
+        margin: 0;
+        font-weight: normal;
+    }
+    .start-new-quiz {
+        @include result-buttons(10px, 2rem); 
+    }
+}
