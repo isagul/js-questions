@@ -6,7 +6,7 @@
     border-radius: 3px;
     color: white;
     cursor: pointer;
-    width:115px;
+    width:120px;
     margin-top: $marginTop;
     margin-bottom: $marginBottom;
 }
@@ -33,9 +33,13 @@
         }
     }
     .percentage-area {
-        text-align: center;
-        .percentage-field {
-            color: #ed5f1f;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 1rem;
+
+        label {
+            margin-bottom: 10px;
         }
     }
     .retry-quiz{

@@ -4,16 +4,17 @@ export const Store = createContext();
 
 const initialState = {
     currentQuestions: [],
+    restQuestions: [],
     userAnswers: []
 };
 
 function reducer(state, action) {
-  let updatedState;
+  // let updatedState;
   //let index;
 
   switch (action.type) {
     case SET_QUESTIONS:
-      return {...state, currentQuestions: [...action.payload]};
+      return {...state, currentQuestions: [...action.payload.slice(0,4)]};
     case SET_USER_ANSWER:
       let updatedState = [...state.userAnswers];
       let idx = updatedState.findIndex(item => item.question.id === action.payload.question.id);

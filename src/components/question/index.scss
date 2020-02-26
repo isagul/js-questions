@@ -36,10 +36,15 @@
             color: white;
             padding-left: 1rem;
             margin-bottom: 3px;  
-            transition: all 0.1s ease;   
+            transition: all 0.1s ease;  
+            padding: 10px; 
             
             label {
                 margin-right: 5px
+            }
+
+            p {
+                margin-bottom: 0;
             }
             
             &:hover {
@@ -55,6 +60,8 @@
         justify-content: space-between;
         font-size: 14px;
         cursor:pointer;
+        padding: 0 8px;
+        margin-top: 10px;
 
         p {
             font-weight: 600;

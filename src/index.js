@@ -10,6 +10,7 @@ import {
     Route
 } from "react-router-dom";
 import { StoreProvider } from './store';
+import 'antd/dist/antd.css';
 
 ReactDOM.render(
     <StoreProvider>

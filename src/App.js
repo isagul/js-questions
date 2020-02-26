@@ -6,13 +6,13 @@ import {SET_QUESTIONS} from './constants/actions';
 import './App.scss';
 
 function App() {
-  const {state, dispatch} = useContext(Store);
+  const {dispatch} = useContext(Store);
   useEffect(() => {
     /*console.log(questions)
     console.log(state)*/
     dispatch({
       type: SET_QUESTIONS,
-      payload: questions.slice(0,3)
+      payload: questions
     })
   }, []);
   return (

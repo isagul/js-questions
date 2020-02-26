@@ -1,5 +1,6 @@
 import React, {useContext, useEffect, useState} from 'react';
 import {Store} from '../../store';
+import { Progress } from 'antd';
 import './index.scss';
 
 const FinalResult = (props) => {
@@ -27,7 +28,12 @@ const FinalResult = (props) => {
                 <label className="wrong-field">Wrong: {state.userAnswers.length - correctAnswerCount}</label>
             </div>
             <div className="percentage-area">
-                <label className="percentage-field">Score: {((correctAnswerCount / state.userAnswers.length) * 100).toFixed(2)} %</label>
+                <label>Score: </label>
+                {
+                    ((correctAnswerCount / state.userAnswers.length) * 100).toFixed(2) !== "NaN" ?
+                    <Progress type="circle" percent={Number(((correctAnswerCount / state.userAnswers.length) * 100).toFixed(2))} /> :
+                    <Progress type="circle" percent={0} />
+                }
             </div>
             <button className="retry-quiz" onClick={retryQuiz}>Retry Quiz</button>
             <p className="or">or</p>
