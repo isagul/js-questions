@@ -14,7 +14,16 @@ function reducer(state, action) {
 
   switch (action.type) {
     case SET_QUESTIONS:
-      return {...state, currentQuestions: [...action.payload.slice(0,4)]};
+      let randomQuestions = [];
+      
+      while (randomQuestions.length < 10) {
+        let item = action.payload[Math.floor(Math.random() * action.payload.length)];
+        let idx = randomQuestions.findIndex(question => question.id === item.id);
+        if (idx === -1) {
+          randomQuestions.push(item);
+        }
+      }
+      return {...state, currentQuestions: [...randomQuestions]};
     case SET_USER_ANSWER:
       let updatedState = [...state.userAnswers];
       let idx = updatedState.findIndex(item => item.question.id === action.payload.question.id);

@@ -47,15 +47,15 @@ export const questions = [
     },
     {
         id: 5,
-        question: "function sayHi() {\nconsole.log(name);\nconsole.log(age);\nvar name = \"Lydia\";\nlet age = 21;\n}\nsayHi();",
+        question: "const bird = {\n  size: \"small\"\n};\n\nconst mouse = {\n  name: \"Mickey\",\n  small: true\n};",
         options: [
-            { optionName: 'A', option: 'Lydia and undefined'},
-            { optionName: 'B', option: 'Lydia and ReferenceError'},
-            { optionName: 'C', option: 'ReferenceError and 21'},
-            { optionName: 'D', option: 'undefined and ReferenceError'}
+            { optionName: 'A', option: 'mouse.bird.size is not valid'},
+            { optionName: 'B', option: 'mouse[bird.size] is not valid'},
+            { optionName: 'C', option: 'mouse[bird["size"]] is not valid'},
+            { optionName: 'D', option: 'All of them are valid'}
         ],
-        answer: 'D',
-        solution: ''
+        answer: 'A',
+        solution: 'In JavaScript, all object keys are strings (unless it\'s a Symbol). Even though we might not type them as strings, they are always converted into strings under the hood. JavaScript interprets (or unboxes) statements. When we use bracket notation, it sees the first opening bracket [ and keeps going until it finds the closing bracket ]. Only then, it will evaluate the statement. mouse[bird.size]: First it evaluates bird.size, which is "small". mouse["small"] returns true However, with dot notation, this doesn\'t happen. mouse does not have a key called bird, which means that mouse.bird is undefined. Then, we ask for the size using dot notation: mouse.bird.size. Since mouse.bird is undefined, we\'re actually asking undefined.size. This isn\'t valid, and will throw an error similar to Cannot read property "size" of undefined.'
     },
     {
         id: 6,
