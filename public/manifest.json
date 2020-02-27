@@ -41,6 +41,11 @@
       "src": "assets/apple-icon-180x180.png",
       "type": "image/png",
       "sizes": "180x180"
+    },
+    {
+      "src": "assets/android-icon-192x192.png",
+      "type": "image/png",
+      "sizes": "192x192"
     }
   ],
   "start_url": ".",

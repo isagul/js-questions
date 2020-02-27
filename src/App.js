@@ -10,7 +10,7 @@ const { Option } = Select;
 const questions = require('./api/data.json');
 
 function App() {
-  const { dispatch } = useContext(Store);
+  const { state, dispatch } = useContext(Store);
 
   function handleChange(value) {
     dispatch({
@@ -31,7 +31,7 @@ function App() {
       <h2>JavaScript Quiz App</h2>
       <div className="select-count-area">
         <label>Select Question Count:</label>
-        <Select defaultValue="10" style={{ width: 120, marginBottom: '10px' }} onChange={handleChange}>
+        <Select defaultValue={state.questionCount} style={{ width: 120, marginBottom: '10px' }} onChange={handleChange}>
           <Option value="1">1</Option>
           <Option value="3">3</Option>
           <Option value="5">5</Option>
