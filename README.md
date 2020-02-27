@@ -4,8 +4,10 @@ Questions in this project was created by using Lydia Hallie's [javascript-questi
 
 I parsed Lydia's js questions and developed a js quiz game app. I hope you like it.
 
-![Screenshot_202](https://user-images.githubusercontent.com/16213088/75444776-1f560c00-5975-11ea-85ba-67c060483f22.png)
+![Screenshot_205](https://user-images.githubusercontent.com/16213088/75455034-76fd7300-5987-11ea-8a32-314bd91f4427.png)
 
-![Screenshot_203](https://user-images.githubusercontent.com/16213088/75444780-211fcf80-5975-11ea-90b1-e658f7257f3f.png)
+![Screenshot_206](https://user-images.githubusercontent.com/16213088/75455037-78c73680-5987-11ea-9247-16976902044b.png)
 
-![Screenshot_204](https://user-images.githubusercontent.com/16213088/75444785-2250fc80-5975-11ea-8f76-be244dc8dfdc.png)
+![Screenshot_207](https://user-images.githubusercontent.com/16213088/75455039-7a90fa00-5987-11ea-8374-287b59691d50.png)
+
+![Screenshot_208](https://user-images.githubusercontent.com/16213088/75455040-7bc22700-5987-11ea-8a79-db575f54f82c.png)

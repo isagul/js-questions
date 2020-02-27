@@ -11,6 +11,7 @@ const Question = (props) => {
     const [visible, setVisible] = useState(false);
     const [currentQuestion, setCurrentQuestion] = useState({});
     const [solution, setSolution] = useState("");
+    const [answer, setAnswer] = useState({});
 
     const linksPerPage = 1;
     const indexOfLastLink = currentPage * linksPerPage;
@@ -106,6 +107,7 @@ const Question = (props) => {
     }
 
     function showModal(e) {
+        setAnswer(e.answer);
         setSolution(e.solution)
         setVisible(true)
     };
@@ -152,6 +154,7 @@ const Question = (props) => {
                                     onCancel={handleCancel}
                                 >
                                     <p>{solution}</p>
+                                    <h4>{answer}</h4>
                                 </Modal>
                             }
                         </div>
