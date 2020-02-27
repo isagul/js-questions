@@ -1,23 +1,34 @@
 import React, {useContext, useEffect, useState} from 'react';
 import {Store} from '../../store';
 import { Progress } from 'antd';
+import {SET_QUESTIONS} from '../../constants/actions';
+import {START_QUIZ, HOME} from '../../constants/routes';
 import './index.scss';
 
 const FinalResult = (props) => {
-    const {state} = useContext(Store);
+    const {state, dispatch} = useContext(Store);
     const [correctAnswerCount, setCorrectAnswerCount] = useState(0);
     
     useEffect(() => {
         state.userAnswers.forEach(item => {
-            if (item.userAnswer.optionName === item.question.answer) {
+            if (item.userAnswer === item.question.answer.split(":")[1].trim()) {
                 setCorrectAnswerCount(prev => prev + 1)
             }
         })
     }, [])
 
     const retryQuiz = () => {
-        props.history.push('/start-quiz');
         state.userAnswers = [];
+        props.history.push(START_QUIZ);
+    }
+
+    const startNewQuiz = () => {
+        state.userAnswers = [];
+        dispatch({
+            type: SET_QUESTIONS,
+            payload: state.restQuestions
+        })
+        props.history.push(HOME);
     }
 
     return (
@@ -37,7 +48,7 @@ const FinalResult = (props) => {
             </div>
             <button className="retry-quiz" onClick={retryQuiz}>Retry Quiz</button>
             <p className="or">or</p>
-            <button className="start-new-quiz">Start New Quiz</button>
+            <button className="start-new-quiz" onClick={startNewQuiz}>Start New Quiz</button>
         </div>
     )
 }

@@ -11,6 +11,12 @@
     flex-direction: column;
     justify-content: center;
     background: aliceblue;
+
+    .select-count-area {
+        label {
+            margin-right: 8px;
+        }
+    }
 }
 .btn-start-test {
     background-color: #ed5f1f;
