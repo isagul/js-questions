@@ -53,4 +53,31 @@
     .start-new-quiz {
         @include result-buttons(10px, 2rem); 
     }
+
+    .btn-check-answers {
+        border: none;
+        padding: 8px 0;
+        background: cadetblue;
+        color: white;
+        border-radius: 3px;
+        font-weight: normal;
+        cursor: pointer;
+    }
+
+    
+}
+
+.check-answers-area {
+    .check-answers {
+        display: flex;
+        .user-answer, .right-answer {
+            margin-right: 10px;
+            span {
+                font-weight: 600;
+            }
+        }
+        .result {
+            font-weight: 600;
+        }
+    }
 }

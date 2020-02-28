@@ -115,11 +115,7 @@ const Question = (props) => {
     const handleOk = e => {
         setVisible(false)
     };
-
-    const handleCancel = e => {
-        setVisible(false)
-    };
-
+    
     return (
         <>
             {
@@ -151,7 +147,7 @@ const Question = (props) => {
                                     visible={visible}
                                     onOk={handleOk}
                                     centered
-                                    onCancel={handleCancel}
+                                    cancelButtonProps={{hidden: true}}
                                 >
                                     <p>{solution}</p>
                                     <h4>{answer}</h4>
