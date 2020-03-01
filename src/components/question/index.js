@@ -21,7 +21,7 @@ const Question = (props) => {
         if (state.currentQuestions.length === 0) {
             props.history.push(HOME)
         }
-    }, []);
+    }, [props.history, state.currentQuestions.length]);
 
     useEffect(() => {
         if (state.userAnswers[currentPage - 1] !== undefined) {
@@ -138,7 +138,12 @@ const Question = (props) => {
                             <div className="user-action">
                                 <p onClick={prevQuestion}>Previous</p>
                                 <p onClick={() => showModal(item)}>View Solution</p>
-                                <p onClick={nextQuestion}>Next</p>
+                                {
+                                    currentPage === state.currentQuestions.length ?
+                                    <p onClick={nextQuestion}>Finish Test</p>
+                                    : <p onClick={nextQuestion}>Next</p>
+                                }
+                                
                             </div>
                             {
                                 visible &&

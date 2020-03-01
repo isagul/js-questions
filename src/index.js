@@ -13,12 +13,6 @@ import { StoreProvider } from './store';
 import {HOME, FINAL_RESULT, START_QUIZ} from './constants/routes';
 import 'antd/dist/antd.css';
 
-if('serviceWorker' in navigator) {
-    window.addEventListener('load', () => {
-        navigator.serviceWorker
-        .register('./service-worker.js');
-    })
-}
 
 ReactDOM.render(
     <StoreProvider>

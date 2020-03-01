@@ -6,7 +6,7 @@
     border-radius: 3px;
     color: white;
     cursor: pointer;
-    width:120px;
+    width:130px;
     margin-top: $marginTop;
     margin-bottom: $marginBottom;
 }
@@ -19,6 +19,8 @@
     border:1px solid lightgray;
     box-shadow: 1px 1px 10px 2px lightgrey;
     font-weight: 600;
+    margin: 2rem auto 0 auto;
+
     .title {
         text-align: center;
     }
@@ -51,7 +53,7 @@
         font-weight: normal;
     }
     .start-new-quiz {
-        @include result-buttons(10px, 2rem); 
+        @include result-buttons(10px, 2rem);
     }
 
     .btn-check-answers {
@@ -67,17 +69,23 @@
     
 }
 
-.check-answers-area {
-    .check-answers {
-        display: flex;
-        .user-answer, .right-answer {
-            margin-right: 10px;
-            span {
+.ant-modal-body {
+    padding: 10px 20px !important;
+    .check-answers-area {
+        border-bottom: 1px dashed lightgray;
+        margin-bottom: 5px;
+        .check-answers {
+            display: flex;
+            .user-answer, .right-answer {
+                margin-right: 10px;
+                span {
+                    font-weight: 600;
+                }
+            }
+            .result {
                 font-weight: 600;
             }
         }
-        .result {
-            font-weight: 600;
-        }
     }
 }
+

@@ -22,7 +22,7 @@ const FinalResult = (props) => {
                 setCorrectAnswerCount(prev => prev + 1)
             }
         })
-    }, [])
+    }, [state.userAnswers])
 
     const retryQuiz = () => {
         state.userAnswers = [];
@@ -82,7 +82,7 @@ const FinalResult = (props) => {
                                 <h3>Question {index + 1}</h3>
                                 <div className="check-answers">
                                     <p className="user-answer">Your Answer: <span>{answer.userAnswer}</span></p>
-                                    <p className="right-answer">Correct Answer: <span>{answer.question.answer.split(":")[1].trim()}</span></p>
+                                    <p className="right-answer">Correct: <span>{answer.question.answer.split(":")[1].trim()}</span></p>
                                     <label style={{marginRight: '5px'}}>Result: </label>
                                     {
                                         answer.result === "Correct" ?

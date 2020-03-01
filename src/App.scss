@@ -9,10 +9,13 @@
     display: flex;
     align-items: center;
     flex-direction: column;
-    justify-content: center;
-    background: aliceblue;
+    justify-content: space-between;
+    background-image: url('./assets/game-bg.png');
+    background-size: cover;
+    margin: 2rem auto 0 auto;
 
-    .select-count-area {
+    .title-count-area {
+        margin-top: 3rem;
         label {
             margin-right: 8px;
         }

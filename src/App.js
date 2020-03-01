@@ -28,9 +28,9 @@ function App() {
 
   return (
     <div className="index">
-      <h2>JavaScript Quiz App</h2>
-      <div className="select-count-area">
-        <label>Select Question Count:</label>
+      <div className="title-count-area">
+        <h2>JavaScript Quiz App</h2>
+        <label>Question Count:</label>
         <Select defaultValue={state.questionCount} style={{ width: 120, marginBottom: '10px' }} onChange={handleChange}>
           <Option value="1">1</Option>
           <Option value="3">3</Option>
