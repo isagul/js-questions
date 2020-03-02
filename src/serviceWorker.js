@@ -1,6 +1,7 @@
-var CACHE_NAME = 'v1';
+let CACHE_NAME = 'v1';
+let self = this;
 
-this.addEventListener('activate', function (event) {
+self.addEventListener('activate', function (event) {
     event.waitUntil(
         caches.keys().then(cacheNames => {
             return Promise.all(
@@ -15,7 +16,7 @@ this.addEventListener('activate', function (event) {
 });
 
 
-this.addEventListener('fetch', function (event) {
+self.addEventListener('fetch', function (event) {
     event.respondWith(
         fetch(event.request)
             .then(res => {
