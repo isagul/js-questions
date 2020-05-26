@@ -40,10 +40,10 @@ const FinalResult = (props) => {
 
     const showModal = () => {
         setVisible(true)
-      };
+    };
     
     const handleOk = e => {
-    setVisible(false)
+        setVisible(false)
     };
 
     return (
@@ -72,6 +72,7 @@ const FinalResult = (props) => {
             title="Your Answers"
             visible={visible}
             onOk={handleOk}
+            onCancel={handleOk}
             cancelButtonProps={{hidden: true}}
             >
                 {

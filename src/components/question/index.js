@@ -112,7 +112,7 @@ const Question = (props) => {
         setVisible(true)
     };
 
-    const handleOk = e => {
+    const handleOk = () => {
         setVisible(false)
     };
     
@@ -151,6 +151,7 @@ const Question = (props) => {
                                     title="Solution"
                                     visible={visible}
                                     onOk={handleOk}
+                                    onCancel={handleOk}
                                     centered
                                     cancelButtonProps={{hidden: true}}
                                 >
